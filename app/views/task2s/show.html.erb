@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task2.title %>
-</p>
+<h1>
+  <strong>タスク詳細</strong>
+ </h1>
+<br>【タイトル】
+<br><%= @task2.title %>
+<br>【内容】
+<br><%= @task2.body %>
+<br>
 
-<p>
-  <strong>Body:</strong>
-  <%= @task2.body %>
-</p>
-
-<%= link_to 'Edit', edit_task2_path(@task2) %> |
-<%= link_to 'Back', task2s_path %>
+<%= link_to '編集', edit_task2_path(@task2) %> 
+<%= link_to "削除", task2_path(@task2), method: :delete %>
+<%= link_to '戻る', task2s_path %>

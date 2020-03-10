@@ -5,6 +5,7 @@ class Task2sController < ApplicationController
   # GET /task2s.json
   def index
     @task2s = Task2.all
+    @task2 = Task2.new
   end
 
   # GET /task2s/1
@@ -58,7 +59,7 @@ class Task2sController < ApplicationController
   def destroy
     @task2.destroy
     respond_to do |format|
-      format.html { redirect_to task2s_url, notice: 'Task2 was successfully destroyed.' }
+      format.html { redirect_to task2s_path, notice: 'Task2 was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
