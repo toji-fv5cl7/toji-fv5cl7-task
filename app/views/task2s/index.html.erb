@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>タスク一覧</h1>
+
+<table>
+
+  <tbody>
+    <% @task2s.each do |task2| %>
+      <tr>
+        
+        <td> ・ <%= link_to task2.title, task2 %></td>
+        <td><%= link_to '削除', task2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr>
+<h2>タスク登録</h2>
+<%= form_with model: @task2, local: true do |form| %> 
+<br>タイトル
+<br><%= form.text_field :title %>
+
+<br>内容
+<br><%= form.text_area :body %>
+
+<br>
+<%= form.submit "Create Task" %> 
+
+
+<% end %>
