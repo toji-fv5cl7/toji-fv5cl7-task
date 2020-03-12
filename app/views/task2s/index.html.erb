@@ -18,15 +18,15 @@
 <br>
 <hr>
 <h2>タスク登録</h2>
+
+<% if @task2.errors.any? %>
+  <p><b> エラー内容</b></p>
+
+<% end %>
+
+
 <%= form_with model: @task2, local: true do |form| %> 
-<br>タイトル
-<br><%= form.text_field :title %>
-
-<br>内容
-<br><%= form.text_area :body %>
-
-<br>
-<%= form.submit "Create Task" %> 
+      <%= render 'form', task2: @task2 %>
 
 
 <% end %>
